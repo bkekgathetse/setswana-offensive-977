@@ -9,7 +9,7 @@
 
 DATA STATEMENT FOR SETSWANA OFFENSIVE LANGUAGE DATASET
 
-The Setswana Offensive language content comprises of labels/annotations on approximately 977 instances collected from both offensive and non-offensive sources in live settings such as social media, political debates, and lexicographic sources. This dataset has not been publicly made available, due to privacy concerns in line with Data Protection Act of Botswana, 2018.
+The Setswana Offensive language content comprises of labels/annotations on approximately 977 instances collected from both offensive and non-offensive sources in live settings such as social media, political debates, and lexicographic sources. This dataset is publicly  available on Huggingface.
 
 A.	CURATION RATIONALE 
 
