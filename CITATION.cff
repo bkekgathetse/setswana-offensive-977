@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: Developing Monolingual Setswana Datasets for Offensive Content Detection
+message: "If you use this resource, please cite this work."
+authors:
+  - family-names: Kekgathetse
+    given-names: Mopati Bernerdict
+keywords: [Setswana, offensive language, low-resource NLP, forensic NLP, explainability]
+license: Apache-2.0
+
