@@ -308,4 +308,4 @@ Map: 100%
 [4/4 00:00]
 === Test Set Metrics ===
 {'eval_loss': 0.3381184935569763, 'eval_model_preparation_time': 0.0027, 'eval_accuracy': 0.8673469387755102, 'eval_mcc': 0.7326205066429489, 'eval_roc_auc': 0.9288259958071279, 'eval_f1_macro': 0.8662186285834296, 'eval_recall_1': 0.8444444444444444, 'eval_runtime': 0.5897, 'eval_samples_per_second': 332.398, 'eval_steps_per_second': 6.784}
-Best performing model saved to: /content/drive/My Drive/Colab Notebooks/PuoBERTa-best-fold-model-80-20
+Best performing model saved to:
