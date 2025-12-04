@@ -1,0 +1,331 @@
+Requirement already satisfied: transformers in /usr/local/lib/python3.11/dist-packages (4.51.3)
+Collecting datasets
+  Downloading datasets-3.5.0-py3-none-any.whl.metadata (19 kB)
+Requirement already satisfied: torch in /usr/local/lib/python3.11/dist-packages (2.6.0+cu124)
+Requirement already satisfied: scikit-learn in /usr/local/lib/python3.11/dist-packages (1.6.1)
+Requirement already satisfied: filelock in /usr/local/lib/python3.11/dist-packages (from transformers) (3.18.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.30.0 in /usr/local/lib/python3.11/dist-packages (from transformers) (0.30.2)
+Requirement already satisfied: numpy>=1.17 in /usr/local/lib/python3.11/dist-packages (from transformers) (2.0.2)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/dist-packages (from transformers) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /usr/local/lib/python3.11/dist-packages (from transformers) (6.0.2)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.11/dist-packages (from transformers) (2024.11.6)
+Requirement already satisfied: requests in /usr/local/lib/python3.11/dist-packages (from transformers) (2.32.3)
+Requirement already satisfied: tokenizers<0.22,>=0.21 in /usr/local/lib/python3.11/dist-packages (from transformers) (0.21.1)
+Requirement already satisfied: safetensors>=0.4.3 in /usr/local/lib/python3.11/dist-packages (from transformers) (0.5.3)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.11/dist-packages (from transformers) (4.67.1)
+Requirement already satisfied: pyarrow>=15.0.0 in /usr/local/lib/python3.11/dist-packages (from datasets) (18.1.0)
+Collecting dill<0.3.9,>=0.3.0 (from datasets)
+  Downloading dill-0.3.8-py3-none-any.whl.metadata (10 kB)
+Requirement already satisfied: pandas in /usr/local/lib/python3.11/dist-packages (from datasets) (2.2.2)
+Collecting xxhash (from datasets)
+  Downloading xxhash-3.5.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting multiprocess<0.70.17 (from datasets)
+  Downloading multiprocess-0.70.16-py311-none-any.whl.metadata (7.2 kB)
+Collecting fsspec<=2024.12.0,>=2023.1.0 (from fsspec[http]<=2024.12.0,>=2023.1.0->datasets)
+  Downloading fsspec-2024.12.0-py3-none-any.whl.metadata (11 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.11/dist-packages (from datasets) (3.11.15)
+Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.11/dist-packages (from torch) (4.13.2)
+Requirement already satisfied: networkx in /usr/local/lib/python3.11/dist-packages (from torch) (3.4.2)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.11/dist-packages (from torch) (3.1.6)
+Collecting nvidia-cuda-nvrtc-cu12==12.4.127 (from torch)
+  Downloading nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cuda-runtime-cu12==12.4.127 (from torch)
+  Downloading nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cuda-cupti-cu12==12.4.127 (from torch)
+  Downloading nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cudnn-cu12==9.1.0.70 (from torch)
+  Downloading nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cublas-cu12==12.4.5.8 (from torch)
+  Downloading nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cufft-cu12==11.2.1.3 (from torch)
+  Downloading nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-curand-cu12==10.3.5.147 (from torch)
+  Downloading nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cusolver-cu12==11.6.1.9 (from torch)
+  Downloading nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cusparse-cu12==12.3.1.170 (from torch)
+  Downloading nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /usr/local/lib/python3.11/dist-packages (from torch) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /usr/local/lib/python3.11/dist-packages (from torch) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /usr/local/lib/python3.11/dist-packages (from torch) (12.4.127)
+Collecting nvidia-nvjitlink-cu12==12.4.127 (from torch)
+  Downloading nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Requirement already satisfied: triton==3.2.0 in /usr/local/lib/python3.11/dist-packages (from torch) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in /usr/local/lib/python3.11/dist-packages (from torch) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.11/dist-packages (from sympy==1.13.1->torch) (1.3.0)
+Requirement already satisfied: scipy>=1.6.0 in /usr/local/lib/python3.11/dist-packages (from scikit-learn) (1.14.1)
+Requirement already satisfied: joblib>=1.2.0 in /usr/local/lib/python3.11/dist-packages (from scikit-learn) (1.4.2)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /usr/local/lib/python3.11/dist-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (2.6.1)
+Requirement already satisfied: aiosignal>=1.1.2 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (1.3.2)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (25.3.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (1.6.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (6.4.3)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (0.3.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.11/dist-packages (from aiohttp->datasets) (1.20.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.11/dist-packages (from requests->transformers) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.11/dist-packages (from requests->transformers) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.11/dist-packages (from requests->transformers) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.11/dist-packages (from requests->transformers) (2025.1.31)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.11/dist-packages (from jinja2->torch) (3.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.11/dist-packages (from pandas->datasets) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/dist-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/dist-packages (from pandas->datasets) (2025.2)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/dist-packages (from python-dateutil>=2.8.2->pandas->datasets) (1.17.0)
+Downloading datasets-3.5.0-py3-none-any.whl (491 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 491.2/491.2 kB 19.2 MB/s eta 0:00:00
+Downloading nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl (363.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 3.2 MB/s eta 0:00:00
+Downloading nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (13.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 32.2 MB/s eta 0:00:00
+Downloading nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (24.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 30.9 MB/s eta 0:00:00
+Downloading nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (883 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 14.9 MB/s eta 0:00:00
+Downloading nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl (664.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 1.3 MB/s eta 0:00:00
+Downloading nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl (211.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 5.5 MB/s eta 0:00:00
+Downloading nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl (56.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 13.1 MB/s eta 0:00:00
+Downloading nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl (127.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 7.6 MB/s eta 0:00:00
+Downloading nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl (207.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 5.4 MB/s eta 0:00:00
+Downloading nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (21.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 107.6 MB/s eta 0:00:00
+Downloading dill-0.3.8-py3-none-any.whl (116 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 116.3/116.3 kB 10.7 MB/s eta 0:00:00
+Downloading fsspec-2024.12.0-py3-none-any.whl (183 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 183.9/183.9 kB 18.1 MB/s eta 0:00:00
+Downloading multiprocess-0.70.16-py311-none-any.whl (143 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 143.5/143.5 kB 15.6 MB/s eta 0:00:00
+Downloading xxhash-3.5.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (194 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 194.8/194.8 kB 19.1 MB/s eta 0:00:00
+Installing collected packages: xxhash, nvidia-nvjitlink-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, fsspec, dill, nvidia-cusparse-cu12, nvidia-cudnn-cu12, multiprocess, nvidia-cusolver-cu12, datasets
+  Attempting uninstall: nvidia-nvjitlink-cu12
+    Found existing installation: nvidia-nvjitlink-cu12 12.5.82
+    Uninstalling nvidia-nvjitlink-cu12-12.5.82:
+      Successfully uninstalled nvidia-nvjitlink-cu12-12.5.82
+  Attempting uninstall: nvidia-curand-cu12
+    Found existing installation: nvidia-curand-cu12 10.3.6.82
+    Uninstalling nvidia-curand-cu12-10.3.6.82:
+      Successfully uninstalled nvidia-curand-cu12-10.3.6.82
+  Attempting uninstall: nvidia-cufft-cu12
+    Found existing installation: nvidia-cufft-cu12 11.2.3.61
+    Uninstalling nvidia-cufft-cu12-11.2.3.61:
+      Successfully uninstalled nvidia-cufft-cu12-11.2.3.61
+  Attempting uninstall: nvidia-cuda-runtime-cu12
+    Found existing installation: nvidia-cuda-runtime-cu12 12.5.82
+    Uninstalling nvidia-cuda-runtime-cu12-12.5.82:
+      Successfully uninstalled nvidia-cuda-runtime-cu12-12.5.82
+  Attempting uninstall: nvidia-cuda-nvrtc-cu12
+    Found existing installation: nvidia-cuda-nvrtc-cu12 12.5.82
+    Uninstalling nvidia-cuda-nvrtc-cu12-12.5.82:
+      Successfully uninstalled nvidia-cuda-nvrtc-cu12-12.5.82
+  Attempting uninstall: nvidia-cuda-cupti-cu12
+    Found existing installation: nvidia-cuda-cupti-cu12 12.5.82
+    Uninstalling nvidia-cuda-cupti-cu12-12.5.82:
+      Successfully uninstalled nvidia-cuda-cupti-cu12-12.5.82
+  Attempting uninstall: nvidia-cublas-cu12
+    Found existing installation: nvidia-cublas-cu12 12.5.3.2
+    Uninstalling nvidia-cublas-cu12-12.5.3.2:
+      Successfully uninstalled nvidia-cublas-cu12-12.5.3.2
+  Attempting uninstall: fsspec
+    Found existing installation: fsspec 2025.3.2
+    Uninstalling fsspec-2025.3.2:
+      Successfully uninstalled fsspec-2025.3.2
+  Attempting uninstall: nvidia-cusparse-cu12
+    Found existing installation: nvidia-cusparse-cu12 12.5.1.3
+    Uninstalling nvidia-cusparse-cu12-12.5.1.3:
+      Successfully uninstalled nvidia-cusparse-cu12-12.5.1.3
+  Attempting uninstall: nvidia-cudnn-cu12
+    Found existing installation: nvidia-cudnn-cu12 9.3.0.75
+    Uninstalling nvidia-cudnn-cu12-9.3.0.75:
+      Successfully uninstalled nvidia-cudnn-cu12-9.3.0.75
+  Attempting uninstall: nvidia-cusolver-cu12
+    Found existing installation: nvidia-cusolver-cu12 11.6.3.83
+    Uninstalling nvidia-cusolver-cu12-11.6.3.83:
+      Successfully uninstalled nvidia-cusolver-cu12-11.6.3.83
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+gcsfs 2025.3.2 requires fsspec==2025.3.2, but you have fsspec 2024.12.0 which is incompatible.
+Successfully installed datasets-3.5.0 dill-0.3.8 fsspec-2024.12.0 multiprocess-0.70.16 nvidia-cublas-cu12-12.4.5.8 nvidia-cuda-cupti-cu12-12.4.127 nvidia-cuda-nvrtc-cu12-12.4.127 nvidia-cuda-runtime-cu12-12.4.127 nvidia-cudnn-cu12-9.1.0.70 nvidia-cufft-cu12-11.2.1.3 nvidia-curand-cu12-10.3.5.147 nvidia-cusolver-cu12-11.6.1.9 nvidia-cusparse-cu12-12.3.1.170 nvidia-nvjitlink-cu12-12.4.127 xxhash-3.5.0
+Mounted at /content/drive
+/usr/local/lib/python3.11/dist-packages/huggingface_hub/utils/_auth.py:94: UserWarning: 
+The secret `HF_TOKEN` does not exist in your Colab secrets.
+To authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.
+You will be able to reuse this secret in all of your notebooks.
+Please note that authentication is recommended but still optional to access public models or datasets.
+  warnings.warn(
+tokenizer_config.json: 100%
+
+ 398/398 [00:00<00:00, 42.2kB/s]
+sentencepiece.bpe.model: 100%
+
+ 5.07M/5.07M [00:00<00:00, 17.0MB/s]
+tokenizer.json: 100%
+
+ 9.08M/9.08M [00:02<00:00, 4.53MB/s]
+special_tokens_map.json: 100%
+
+ 239/239 [00:00<00:00, 26.9kB/s]
+=== Fold 1/5 ===
+Map: 100%
+
+ 624/624 [00:00<00:00, 5617.37 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 3097.71 examples/s]
+Map: 100%
+
+ 624/624 [00:00<00:00, 28214.94 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 6408.35 examples/s]
+config.json: 100%
+
+ 707/707 [00:00<00:00, 64.4kB/s]
+model.safetensors: 100%
+
+ 1.11G/1.11G [00:16<00:00, 118MB/s]
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Davlan/afro-xlmr-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
+wandb: Logging into wandb.ai. (Learn how to deploy a W&B server locally: https://wandb.me/wandb-server)
+wandb: You can find your API key in your browser here: https://wandb.ai/authorize
+wandb: Paste an API key from your profile and hit enter:
+ ··········
+wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
+wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
+wandb: No netrc file found, creating one.
+wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
+wandb: Currently logged in as: bkekgathetse (bkekgathetse-university-of-pretoria) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+Tracking run with wandb version 0.19.9
+Run data is saved locally in /content/wandb/run-20250427_124925-r2sft9m1
+Syncing run /content/drive/My Drive/Colab Notebooks/AfroXLMR-80-20-noTrigger to Weights & Biases (docs)
+View project at https://wandb.ai/bkekgathetse-university-of-pretoria/huggingface
+View run at https://wandb.ai/bkekgathetse-university-of-pretoria/huggingface/runs/r2sft9m1
+[195/195 01:21, Epoch 5/5]
+Epoch	Training Loss	Validation Loss	Accuracy	Mcc	Roc Auc	F1 Macro	Recall 1
+1	0.688500	0.659175	0.698718	0.494246	0.919612	0.665740	0.389610
+2	0.613400	0.475366	0.858974	0.718231	0.941476	0.858974	0.870130
+3	0.499900	0.359675	0.871795	0.749332	0.940325	0.871032	0.805195
+4	0.428900	0.329935	0.884615	0.772977	0.941147	0.884139	0.831169
+5	0.453100	0.324967	0.878205	0.757731	0.939668	0.877959	0.844156
+[3/3 00:00]
+{'eval_loss': 0.3249669671058655, 'eval_accuracy': 0.8782051282051282, 'eval_mcc': 0.7577312882940623, 'eval_roc_auc': 0.9396679270096991, 'eval_f1_macro': 0.877959402149298, 'eval_recall_1': 0.8441558441558441, 'eval_runtime': 0.9269, 'eval_samples_per_second': 168.297, 'eval_steps_per_second': 3.236, 'epoch': 5.0}
+
+=== Fold 2/5 ===
+Map: 100%
+
+ 624/624 [00:00<00:00, 4437.26 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 2055.10 examples/s]
+Map: 100%
+
+ 624/624 [00:00<00:00, 22266.66 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 6211.01 examples/s]
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Davlan/afro-xlmr-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[195/195 01:24, Epoch 5/5]
+Epoch	Training Loss	Validation Loss	Accuracy	Mcc	Roc Auc	F1 Macro	Recall 1
+1	0.680400	0.643396	0.724359	0.448755	0.809305	0.724348	0.727273
+2	0.581500	0.560401	0.737179	0.525958	0.851060	0.726374	0.948052
+3	0.459800	0.446210	0.801282	0.604066	0.890679	0.801209	0.831169
+4	0.359500	0.418745	0.826923	0.656832	0.898241	0.826745	0.870130
+5	0.340600	0.405178	0.826923	0.656832	0.902680	0.826745	0.870130
+[3/3 00:00]
+{'eval_loss': 0.40517792105674744, 'eval_accuracy': 0.8269230769230769, 'eval_mcc': 0.6568323438998138, 'eval_roc_auc': 0.9026795988821306, 'eval_f1_macro': 0.8267450948130476, 'eval_recall_1': 0.8701298701298701, 'eval_runtime': 0.9241, 'eval_samples_per_second': 168.815, 'eval_steps_per_second': 3.246, 'epoch': 5.0}
+
+=== Fold 3/5 ===
+Map: 100%
+
+ 624/624 [00:00<00:00, 7353.84 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 3512.21 examples/s]
+Map: 100%
+
+ 624/624 [00:00<00:00, 31980.81 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 8498.88 examples/s]
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Davlan/afro-xlmr-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[195/195 01:24, Epoch 5/5]
+Epoch	Training Loss	Validation Loss	Accuracy	Mcc		Roc Auc		F1 Macro	Recall 1
+1	0.673100	0.649119	0.679487	0.368345	0.725300	0.676885	0.779221
+2	0.528400	0.553691	0.711538	0.430206	0.802565	0.710097	0.792208
+3	0.417000	0.483771	0.794872	0.589735	0.845307	0.794737	0.779221
+4	0.366400	0.468280	0.814103	0.628135	0.856978	0.814034	0.805195
+5	0.367000	0.462849	0.814103	0.628426	0.861581	0.813911	0.792208
+[3/3 00:00]
+{'eval_loss': 0.4628492593765259, 'eval_accuracy': 0.8141025641025641, 'eval_mcc': 0.6284261228115992, 'eval_roc_auc': 0.8615814565181654, 'eval_f1_macro': 0.8139113981325325, 'eval_recall_1': 0.7922077922077922, 'eval_runtime': 0.927, 'eval_samples_per_second': 168.279, 'eval_steps_per_second': 3.236, 'epoch': 5.0}
+
+=== Fold 4/5 ===
+Map: 100%
+
+ 624/624 [00:00<00:00, 6248.17 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 3381.51 examples/s]
+Map: 100%
+
+ 624/624 [00:00<00:00, 33649.77 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 8423.49 examples/s]
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Davlan/afro-xlmr-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[195/195 01:24, Epoch 5/5]
+Epoch	Training Loss	Validation Loss	Accuracy	Mcc	Roc Auc	F1 Macro	Recall 1
+1	0.684400	0.673239	0.692308	0.419485	0.751767	0.682065	0.883117
+2	0.601600	0.546046	0.743590	0.487400	0.831333	0.743210	0.714286
+3	0.465200	0.478980	0.782051	0.565279	0.851718	0.781477	0.740260
+4	0.362900	0.458609	0.794872	0.592268	0.865856	0.794025	0.740260
+5	0.366100	0.451414	0.801282	0.604066	0.870623	0.801209	0.831169
+[3/3 00:00]
+{'eval_loss': 0.4514135718345642, 'eval_accuracy': 0.8012820512820513, 'eval_mcc': 0.604065969281972, 'eval_roc_auc': 0.8706230478382376, 'eval_f1_macro': 0.8012085337279566, 'eval_recall_1': 0.8311688311688312, 'eval_runtime': 0.9306, 'eval_samples_per_second': 167.63, 'eval_steps_per_second': 3.224, 'epoch': 5.0}
+
+=== Fold 5/5 ===
+Map: 100%
+
+ 624/624 [00:00<00:00, 6578.87 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 3393.77 examples/s]
+Map: 100%
+
+ 624/624 [00:00<00:00, 34164.13 examples/s]
+Map: 100%
+
+ 156/156 [00:00<00:00, 7992.47 examples/s]
+Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Davlan/afro-xlmr-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[195/195 01:24, Epoch 5/5]
+Epoch	Training Loss	Validation Loss	Accuracy	Mcc	Roc Auc	F1 Macro	Recall 1
+1	0.675600	0.658789	0.679487	0.404651	0.791913	0.661458	0.448718
+2	0.603700	0.554626	0.769231	0.540062	0.817719	0.768889	0.807692
+3	0.536100	0.475865	0.820513	0.641236	0.856673	0.820483	0.833333
+4	0.400900	0.440794	0.826923	0.654330	0.876561	0.826859	0.846154
+5	0.381700	0.429645	0.820513	0.641026	0.879191	0.820513	0.820513
+[3/3 00:00]
+{'eval_loss': 0.4296453893184662, 'eval_accuracy': 0.8205128205128205, 'eval_mcc': 0.6410256410256411, 'eval_roc_auc': 0.8791913214990137, 'eval_f1_macro': 0.8205128205128205, 'eval_recall_1': 0.8205128205128205, 'eval_runtime': 0.93, 'eval_samples_per_second': 167.75, 'eval_steps_per_second': 3.226, 'epoch': 5.0}
+
+Best Fold: Fold 2
+Map: 100%
+
+ 196/196 [00:00<00:00, 3337.84 examples/s]
+Map: 100%
+
+ 196/196 [00:00<00:00, 9900.92 examples/s]
+[4/4 00:00]
+=== Test Set Metrics ===
+{'eval_loss': 0.38945093750953674, 'eval_model_preparation_time': 0.0027, 'eval_accuracy': 0.8622448979591837, 'eval_mcc': 0.7228973640941718, 'eval_roc_auc': 0.9014675052410901, 'eval_f1_macro': 0.8603214823026368, 'eval_recall_1': 0.8111111111111111, 'eval_runtime': 1.1695, 'eval_samples_per_second': 167.586, 'eval_steps_per_second': 3.42}
+[4/4 00:00]
+=== Test Set Metrics ===
+{'eval_loss': 0.38945093750953674, 'eval_model_preparation_time': 0.0029, 'eval_accuracy': 0.8622448979591837, 'eval_mcc': 0.7228973640941718, 'eval_roc_auc': 0.9014675052410901, 'eval_f1_macro': 0.8603214823026368, 'eval_recall_1': 0.8111111111111111, 'eval_runtime': 1.1634, 'eval_samples_per_second': 168.468, 'eval_steps_per_second': 3.438}

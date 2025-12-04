@@ -1,0 +1,93 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split, StratifiedKFold
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.svm import LinearSVC
+from sklearn.metrics import f1_score, classification_report
+from sklearn.preprocessing import LabelEncoder
+import joblib
+
+# Load the dataset
+df = pd.read_csv("/content/drive/My Drive/Colab Notebooks/full_dataset2.csv")
+
+# Encode string labels to numeric
+le = LabelEncoder()
+df['label_encoded'] = le.fit_transform(df['TARGET'])  # e.g., Non-offensive → 0, Offensive → 1
+
+# Split into train (80%) and holdout test set (20%)
+train_df, test_df = train_test_split(
+    df, test_size=0.2, stratify=df['label_encoded'], random_state=42
+)
+
+# TF-IDF vectorization
+vectorizer = TfidfVectorizer(max_features=5000)
+X_train = vectorizer.fit_transform(train_df['TEXT'])
+y_train = train_df['label_encoded'].values
+X_test = vectorizer.transform(test_df['TEXT'])
+y_test = test_df['label_encoded'].values
+
+# Cross-validation on 80% training data
+cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+best_f1 = 0
+best_model = None
+
+for fold, (train_idx, val_idx) in enumerate(cv.split(X_train, y_train)):
+    X_tr, X_val = X_train[train_idx], X_train[val_idx]
+    y_tr, y_val = y_train[train_idx], y_train[val_idx]
+
+    svm_clf = LinearSVC(class_weight='balanced', max_iter=10000)
+    svm_clf.fit(X_tr, y_tr)
+    y_val_pred = svm_clf.predict(X_val)
+    f1 = f1_score(y_val, y_val_pred, average='macro')
+
+    print(f"Fold {fold+1} F1 Macro: {f1:.4f}")
+    if f1 > best_f1:
+        best_f1 = f1
+        best_model = svm_clf
+        joblib.dump(best_model, 'best_svm_model.joblib')  # save best model
+
+# Load best model and evaluate on holdout set
+print("\nEvaluating best SVM model on holdout test set...")
+best_model_ = joblib.load('best_svm_model.joblib')
+y_test_pred = best_model_.predict(X_test)
+print(classification_report(y_test, y_test_pred, target_names=le.classes_))
+
+from sklearn.metrics import matthews_corrcoef, roc_auc_score
+
+# Additional metrics: MCC and ROC–AUC
+mcc = matthews_corrcoef(y_test, y_test_pred)
+
+# Use decision_function if available (LinearSVC); fallback to predict_proba if model supports it
+y_test_score = None
+if hasattr(best_model, "decision_function"):
+    y_test_score = best_model.decision_function(X_test)
+    # If decision_function returns (n_samples, n_classes), take the positive class column (1)
+    if hasattr(y_test_score, "ndim") and y_test_score.ndim == 2:
+        y_test_score = y_test_score[:, 1]
+elif hasattr(best_model, "predict_proba"):
+    y_test_score = best_model.predict_proba(X_test)[:, 1]
+
+
+
+
+print(mcc)
+print(auc)
+
+
+
+
+
+Fold 1 F1 Macro: 0.8253
+Fold 2 F1 Macro: 0.8708
+Fold 3 F1 Macro: 0.8323
+Fold 4 F1 Macro: 0.8649
+Fold 5 F1 Macro: 0.8266
+
+Evaluating best SVM model on holdout test set...
+               precision    recall  f1-score   support
+
+Non-offensive       0.82      0.83      0.83       100
+    Offensive       0.82      0.81      0.82        96
+
+     accuracy                           0.82       196
+    macro avg       0.82      0.82      0.82       196
+ weighted avg       0.82      0.82      0.82       196
