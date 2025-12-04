@@ -190,22 +190,7 @@ model.safetensors: 100%
  1.11G/1.11G [00:16<00:00, 118MB/s]
 Some weights of XLMRobertaForSequenceClassification were not initialized from the model checkpoint at Davlan/afro-xlmr-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
 You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
-wandb: WARNING The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
-wandb: Using wandb-core as the SDK backend.  Please refer to https://wandb.me/wandb-core for more information.
-wandb: Logging into wandb.ai. (Learn how to deploy a W&B server locally: https://wandb.me/wandb-server)
-wandb: You can find your API key in your browser here: https://wandb.ai/authorize
-wandb: Paste an API key from your profile and hit enter:
- ··········
-wandb: WARNING If you're specifying your api key in code, ensure this code is not shared publicly.
-wandb: WARNING Consider setting the WANDB_API_KEY environment variable, or running `wandb login` from the command line.
-wandb: No netrc file found, creating one.
-wandb: Appending key for api.wandb.ai to your netrc file: /root/.netrc
-wandb: Currently logged in as: bkekgathetse (bkekgathetse-university-of-pretoria) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-Tracking run with wandb version 0.19.9
-Run data is saved locally in /content/wandb/run-20250427_124925-r2sft9m1
-Syncing run /content/drive/My Drive/Colab Notebooks/AfroXLMR-80-20-noTrigger to Weights & Biases (docs)
-View project at https://wandb.ai/bkekgathetse-university-of-pretoria/huggingface
-View run at https://wandb.ai/bkekgathetse-university-of-pretoria/huggingface/runs/r2sft9m1
+
 [195/195 01:21, Epoch 5/5]
 Epoch	Training Loss	Validation Loss	Accuracy	Mcc	Roc Auc	F1 Macro	Recall 1
 1	0.688500	0.659175	0.698718	0.494246	0.919612	0.665740	0.389610
