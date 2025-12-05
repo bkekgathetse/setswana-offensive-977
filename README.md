@@ -17,7 +17,7 @@ To support forensic traceability, Local Interpretable Model-agnostic Explanation
 
 This repository contains code, configuration, seeds, and reproducibility artefacts for the paper:
 
-> **Developing Monolingual Setswana Datasets for Offensive Content Detection**  
+> **A Forensic Linguistic Dataset for Offensive Content Detection in Low-Resource Language: Setswana**  
 > (Submitted to Forensic Science International: Reports)
 
 It includes:
