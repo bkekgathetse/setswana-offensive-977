@@ -88,23 +88,11 @@ These may include:
 
 ## 5. Files Included in This Directory
 
-### `lime_instance_XX.html`
+### `lime_instance.html`
 Interactive HTML rendering of LIME explanations for selected test instances.
-
-### `lime_instance_XX_masked.png`
-Static image of masked contribution visualisation.
 
 ### `token_contribution_plot.png`
 Combined summary of token-level contributions for selected samples.
-
-### `counterfactual_flips_sanitised.csv`
-CSV summarising:
-- instance ID  
-- masked original text  
-- masked edited text  
-- flip result  
-- probability shifts  
-- dominant LIME tokens  
 
 ### `explanation_notes.md`
 (You are reading this file.)
