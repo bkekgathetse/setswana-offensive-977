@@ -6,7 +6,7 @@
 
 # Developing Monolingual Setswana Datasets for Offensive Content Detection
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17824737.svg)](https://doi.org/10.5281/zenodo.17824737))
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17824737.svg)](https://doi.org/10.5281/zenodo.17824737)
 [![HF Dataset](https://img.shields.io/badge/HuggingFace-dataset-%23ffcc00)](https://huggingface.co/datasets/mopatik/setswana-offensive-977)
 [![HF Models](https://img.shields.io/badge/HuggingFace-models-%23ffcc00)](https://huggingface.co/mopatik)
 
